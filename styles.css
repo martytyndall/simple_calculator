@@ -1,0 +1,96 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: normal;
+}
+
+body{
+    /* removes padding and margins */
+    padding: 0;
+    margin: 0;
+
+    /* creates a linear background colour blue > green */
+    background: linear-gradient(to right, #00AAFF, #00FF6C);   
+}
+
+.calculator-grid{
+    /* aligns items to a grid template */
+    display: grid;
+
+    /* centres items left and right */
+    justify-content: center;
+
+    /* aligns content to the centre of the dom */
+    align-content: center;
+
+    /* sets minimum height of the grid */
+    min-height: 100vh;
+
+    /* creates 4 columns each 100px wide */
+    grid-template-columns: repeat(4, 100px);
+
+    /* creates 6 rows. First row 120px minimum height and set to grow automatically.
+    Following rows repeat 5 times and 100px in height */
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+.calculator-grid > button{
+    /* changes cursor to pointer on hover */
+    cursor: pointer;
+
+    font-size: 2rem;
+    border: 1px solid white;
+
+    /* removes outline from buttons */
+    outline: none;
+
+    background-color: rgba(255, 255, 255, .75);
+}
+
+.calculator-grid > button:hover{
+    /* changes the colour on hover */
+    background-color: rgba(255, 255, 255, .9);
+}
+
+.span-two{
+    /* sets the cells 'AC' and '=' cells to span 2 columns */
+    grid-column: span 2;
+}
+
+.output{
+    /* sets the output column size to the width of the grid,
+    starting at column 1 and ending at the last (-1) */
+    grid-column: 1 / -1;
+
+    background-color: rgba(0, 0, 0, .75);
+
+    /* sets the output to flex container */
+    display: flex;
+
+    /* aligns the output content to the end of the output */
+    align-items: flex-end;
+
+    /* creates equal space around items in output */
+    justify-content: space-around;
+
+    /* sets the flex direction to be verticle opposed to horizontal */
+    flex-direction: column;
+
+    /* gives output content a padding */
+    padding: 10px;
+
+    /* sets the content to move to the next line when content reaches full width */
+    word-wrap: break-word;
+
+    /* sets the word-wrap to break all content and move to next line */
+    word-break: break-all;
+}
+
+.output .previous-operand{
+    color: rgba(255, 255, 255, .75);
+    font-size: 1.5rem;
+}
+.output .current-operand{
+    color: white;
+    font-size: 2.5rem;
+}
