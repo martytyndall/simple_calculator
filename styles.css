@@ -87,10 +87,13 @@ body{
 }
 
 .output .previous-operand{
+    /* gives the previous operand a font colour of white with .75 transparency
+    and font size of 1.5rem */
     color: rgba(255, 255, 255, .75);
     font-size: 1.5rem;
 }
 .output .current-operand{
+    /* gives the current operand a font colour of white and a font size of 2.5rem */
     color: white;
     font-size: 2.5rem;
 }
